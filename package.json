@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/cors": "^2.8.12",
@@ -14,6 +15,7 @@
     "@typescript-eslint/parser": "^5.0.0",
     "cors": "^2.8.5",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
     "next": "11.1.2",
     "prettier": "^2.4.1",
     "react": "17.0.2",
