@@ -49,7 +49,7 @@ const Home: NextPage = () => {
         <label>
           Enter a game
           <input type="text" value={input} onChange={handleChange} />
-          <input type="submit" />
+          <input className="btn" type="submit" />
         </label>
       </form>
       <h2 className="text-xl font-bold">Matched results from API:</h2>

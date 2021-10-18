@@ -6,10 +6,10 @@ const Header = () => {
       <h1 className="text-3xl">Backlog Blitz</h1>
       <div>
         <Link href="/signup">
-          <a>Sign Up</a>
+          <a className="btn">Sign Up</a>
         </Link>
         <Link href="login">
-          <a>Log In</a>
+          <a className="btn">Log In</a>
         </Link>
       </div>
     </header>
