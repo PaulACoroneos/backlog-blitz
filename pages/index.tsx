@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         </label>
       </form>
       <h2 className="text-xl font-bold">Matched results from API:</h2>
-      {isLoading ? <span>Loading results...</span> : <ul>{data?.map(result => <li key={result.id}>{result.name}</li>)}</ul>}
+      {isLoading ? <span>Loading results...</span> : <ul>{data?.map((result:any) => <li key={result.id}>{result.name}</li>)}</ul>}
     </Layout>
   )
 }
