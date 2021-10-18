@@ -9,7 +9,7 @@ const fakeData = [
 ];
 
 //WIP crude for now until theming or other better system is determined
-const colorPicker = {
+const colorPicker: Record<string, string> = {
   not_started: "bg-red-200",
   in_progress: "bg-blue-200",
   complete: "bg-green-200",
