@@ -1,13 +1,14 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import React from "react";
+import cx from "classnames";
 
 export type ModalProps = {
   buttonClassName?: string;
   buttonLabel: string;
   children?: React.ReactNode;
   title?: string;
-  titleClassName?:string;
+  titleClassName?: string;
 };
 
 export default function Modal({
@@ -15,7 +16,7 @@ export default function Modal({
   buttonClassName,
   children,
   title,
-  titleClassName
+  titleClassName,
 }: ModalProps) {
   return (
     <Dialog.Root>
@@ -23,15 +24,21 @@ export default function Modal({
         <button className={buttonClassName}>{buttonLabel}</button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-slate-600 fixed inset-0 opacity-90" />
-        <Dialog.Content className="bg-white max-h-96 fixed top-1/4 left-1/4 p-4 rounded max-w-[450px] w-[90vw] translate-y-1/2 translate-x-1/2">
-          <Dialog.Title className={titleClassName}>{title}</Dialog.Title>
+        <Dialog.Overlay className="bg-slate-600 fixed inset-0 opacity-90 overflow-auto" />
+        <Dialog.Content className="bg-white fixed p-4 rounded w-[50vw] top-[50%] left-[50%]">
+          <Dialog.Title
+            className={cx("text-center text-xl pb-2 border-b-2 mb-2", {
+              titleClassName: !!titleClassName,
+            })}
+          >
+            {title}
+            <Dialog.Close asChild>
+              <button className="absolute right-0 pr-4 pt-2" aria-label="Close">
+                <Cross2Icon />
+              </button>
+            </Dialog.Close>
+          </Dialog.Title>
           <Dialog.Description>{children}</Dialog.Description>
-          <Dialog.Close asChild>
-            <button className="IconButton" aria-label="Close">
-              <Cross2Icon />
-            </button>
-          </Dialog.Close>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
