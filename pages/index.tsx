@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <title>Backlog Blitz</title>
       </Head>
-      <main className="h-screen px-4">
+      <main className="px-4">
         <header className="py-4 grid grid-cols-2 w-full">
           <h1 className="text-4xl text-white">Backlog Blitz</h1>
           <div className="text-white justify-end text-xl flex items-center space-x-2">
