@@ -24,11 +24,11 @@ export default function Modal({
         <button className={buttonClassName}>{buttonLabel}</button>
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-slate-600 fixed inset-0 opacity-90 overflow-auto" />
-        <Dialog.Content className="bg-white fixed p-4 rounded w-[50vw] top-[50%] left-[50%]">
+        <Dialog.Overlay className="bg-slate-200 fixed inset-0 opacity-95 overflow-auto" />
+        <Dialog.Content className="bg-slate-700 fixed p-4 rounded w-[50vw] top-[15%] left-[25%]">
           <Dialog.Title
             className={cx("text-center text-xl pb-2 border-b-2 mb-2", {
-              titleClassName: !!titleClassName,
+              [titleClassName as string]: !!titleClassName,
             })}
           >
             {title}
